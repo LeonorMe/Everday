@@ -1,6 +1,8 @@
 import tkinter as tk 
 from tkinter import messagebox
 from ttkbootstrap import ttk, Style
+from PIL import Image, ImageTk
+
 """
 SEC = 60
 WORK_TIME = 40 * SEC
@@ -22,6 +24,9 @@ class PomodoroTimer:
         self.root = tk.Tk()
         self.root.geometry("200x200")
         self.root.title("Everday")
+        ico = Image.open("assets\Everday.png")
+        photo = ImageTk.PhotoImage(ico)
+        self.root.wm_iconphoto(False, photo)
         self.style = Style(theme="simplex")
         self.style.theme_use()
         
